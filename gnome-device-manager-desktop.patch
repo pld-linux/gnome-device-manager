@@ -1,0 +1,10 @@
+diff -aurN gnome-device-manager-0.1.orig/data/gnome-device-manager.desktop.in gnome-device-manager-0.1/data/gnome-device-manager.desktop.in
+--- gnome-device-manager-0.1.orig/data/gnome-device-manager.desktop.in	2007-03-24 04:52:56.000000000 +0100
++++ gnome-device-manager-0.1/data/gnome-device-manager.desktop.in	2007-04-06 15:16:27.000000000 +0200
+@@ -7,4 +7,5 @@
+ Terminal=false
+ Type=Application
+ X-GNOME-DocPath=gnome-device-manager/gnome-device-manager.xml
+-Categories=GNOME;GTK;Application;System
++Categories=GNOME;GTK;System;
++
