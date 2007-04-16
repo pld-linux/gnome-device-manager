@@ -1,4 +1,5 @@
 Summary:	GNOME application to manage devices and device drivers
+Summary(pl.UTF-8):	Aplikacja GNOME do zarządzania urządzeniami i sterownikami urządzeń
 Name:		gnome-device-manager
 Version:	0.1
 Release:	1
@@ -27,6 +28,12 @@ This is a GNOME program to manage devices and device drivers. It's
 inspired by hal-device-manager, from the HAL project, but rewritten in
 C for efficiency and an outlook to actually make it manage devices
 rather than just show information.
+
+%description -l pl.UTF-8
+Ten pakiet zawiera aplikację GNOME do zarządzania urządzeniami i
+sterownikami urządzeń. Jest zainspirowana programem hal-device-manager
+z projektu HAL, ale napisana w C pod kątem wydajności i ze zwróceniem
+uwagi, aby zarządzała urządzeniami, a nie tylko pokazywała informacje.
 
 %prep
 %setup -q
