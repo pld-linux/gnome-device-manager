@@ -16,6 +16,8 @@ BuildRequires:	hal-devel >= 0.5.10
 BuildRequires:	intltool >= 0.35.0
 BuildRequires:	libgnomeui-devel >= 2.14.0
 BuildRequires:	pkgconfig
+# support for --with-omf in find-lang.sh
+BuildRequires:	rpm-build >= 4.4.9-10
 BuildRequires:	scrollkeeper >= 0.3.14
 Requires(post,postun):	gtk+2
 Requires(post,postun):	hicolor-icon-theme
@@ -78,7 +80,7 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
-%find_lang %{name} --with-gnome
+%find_lang %{name} --with-gnome --with-omf
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -100,8 +102,6 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/libgnome-device-manager.so.*.*.*
 %{_desktopdir}/gnome-device-manager.desktop
 %{_iconsdir}/hicolor/*/apps/*.png
-%dir %{_omf_dest_dir}/gnome-device-manager
-%{_omf_dest_dir}/gnome-device-manager/gnome-device-manager-C.omf
 
 %files devel
 %defattr(644,root,root,755)
