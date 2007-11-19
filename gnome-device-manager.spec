@@ -1,13 +1,12 @@
 Summary:	GNOME application to manage devices and device drivers
 Summary(pl.UTF-8):	Aplikacja GNOME do zarządzania urządzeniami i sterownikami urządzeń
 Name:		gnome-device-manager
-Version:	0.1
+Version:	0.2
 Release:	1
 License:	GPL
 Group:		X11/Applications
-Source0:	http://people.freedesktop.org/~david/dist/%{name}-%{version}.tar.bz2
-# Source0-md5:	82949f0b58d85743bc062ecfb4c8406c
-Patch0:		%{name}-desktop.patch
+Source0:	http://hal.freedesktop.org/releases/%{name}-%{version}.tar.bz2
+# Source0-md5:	b833a90c940dd6cc992c42ad05ca6831
 BuildRequires:	autoconf
 BuildRequires:	automake >= 1:1.9
 BuildRequires:	gnome-common
@@ -35,9 +34,32 @@ sterownikami urządzeń. Jest zainspirowana programem hal-device-manager
 z projektu HAL, ale napisana w C pod kątem wydajności i ze zwróceniem
 uwagi, aby zarządzała urządzeniami, a nie tylko pokazywała informacje.
 
+%package devel
+Summary:	gnome-device-manager header files
+Summary(pl.UTF-8):	Pliki nagłówkowe gnome-device-manager
+Group:		X11/Development/Libraries
+Requires:	%{name} = %{version}-%{release}
+
+%description devel
+gnome-device-manager header files
+
+%description devel -l pl.UTF-8
+Pliki nagłówkowe gnome-device-manager.
+
+%package static
+Summary:	Static libgnome-device-manager library
+Summary(pl.UTF-8):	Statyczna biblioteka libgnome-device-manager
+Group:		Development/Libraries
+Requires:	%{name}-devel = %{version}-%{release}
+
+%description static
+Static libgnome-device-manager library.
+
+%description static -l pl.UTF-8
+Statyczna biblioteka libgnome-device-manager.
+
 %prep
 %setup -q
-%patch0 -p1
 
 %build
 %{__glib_gettextize}
@@ -62,10 +84,12 @@ rm -rf $RPM_BUILD_ROOT
 rm -rf $RPM_BUILD_ROOT
 
 %post
+/sbin/ldconfig
 %scrollkeeper_update_post
 %update_icon_cache hicolor
 
 %postun
+/sbin/ldconfig
 %scrollkeeper_update_postun
 %update_icon_cache hicolor
 
@@ -73,7 +97,19 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc AUTHORS NEWS README TODO
 %attr(755,root,root) %{_bindir}/gnome-device-manager
+%attr(755,root,root) %{_libdir}/libgnome-device-manager.so.*.*.*
 %{_desktopdir}/gnome-device-manager.desktop
 %{_iconsdir}/hicolor/*/apps/*.png
 %dir %{_omf_dest_dir}/gnome-device-manager
 %{_omf_dest_dir}/gnome-device-manager/gnome-device-manager-C.omf
+
+%files devel
+%defattr(644,root,root,755)
+%attr(755,root,root) %{_libdir}/libgnome-device-manager.so
+%{_libdir}/libgnome-device-manager.la
+%{_includedir}/gnome-device-manager
+%{_pkgconfigdir}/gnome-device-manager.pc
+
+%files static
+%defattr(644,root,root,755)
+%{_libdir}/lib*.a
