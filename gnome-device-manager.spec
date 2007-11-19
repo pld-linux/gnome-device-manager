@@ -12,7 +12,7 @@ BuildRequires:	automake >= 1:1.9
 BuildRequires:	gnome-common
 BuildRequires:	gnome-doc-utils
 BuildRequires:	gtk+2-devel >= 2:2.6.0
-BuildRequires:	hal-devel >= 0.5.9
+BuildRequires:	hal-devel >= 0.5.10
 BuildRequires:	intltool >= 0.35.0
 BuildRequires:	libgnomeui-devel >= 2.14.0
 BuildRequires:	pkgconfig
