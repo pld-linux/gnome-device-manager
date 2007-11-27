@@ -16,8 +16,8 @@ BuildRequires:	hal-devel >= 0.5.10
 BuildRequires:	intltool >= 0.35.0
 BuildRequires:	libgnomeui-devel >= 2.14.0
 BuildRequires:	pkgconfig
-# support for --with-omf in find-lang.sh
-BuildRequires:	rpm-build >= 4.4.9-10
+BuildRequires:	rpmbuild(find_lang) >= 1.23
+BuildRequires:	rpmbuild(macros) >= 1.311
 BuildRequires:	scrollkeeper >= 0.3.14
 Requires(post,postun):	gtk+2
 Requires(post,postun):	hicolor-icon-theme
@@ -112,4 +112,4 @@ rm -rf $RPM_BUILD_ROOT
 
 %files static
 %defattr(644,root,root,755)
-%{_libdir}/lib*.a
+%{_libdir}/libgnome-device-manager.a
