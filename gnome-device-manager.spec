@@ -2,7 +2,7 @@ Summary:	GNOME application to manage devices and device drivers
 Summary(pl.UTF-8):	Aplikacja GNOME do zarządzania urządzeniami i sterownikami urządzeń
 Name:		gnome-device-manager
 Version:	0.2
-Release:	2
+Release:	3
 License:	GPL
 Group:		X11/Applications
 Source0:	http://hal.freedesktop.org/releases/%{name}-%{version}.tar.bz2
@@ -15,6 +15,7 @@ BuildRequires:	gtk+2-devel >= 2:2.6.0
 BuildRequires:	hal-devel >= 0.5.10
 BuildRequires:	intltool >= 0.35.0
 BuildRequires:	libgnomeui-devel >= 2.14.0
+BuildRequires:	libtool
 BuildRequires:	pkgconfig
 BuildRequires:	rpmbuild(find_lang) >= 1.23
 BuildRequires:	rpmbuild(macros) >= 1.311
@@ -66,6 +67,7 @@ Statyczna biblioteka libgnome-device-manager.
 %build
 %{__glib_gettextize}
 %{__intltoolize}
+%{__libtoolize}
 %{__aclocal}
 %{__autoconf}
 %{__autoheader}
