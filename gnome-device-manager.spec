@@ -11,6 +11,7 @@ BuildRequires:	autoconf
 BuildRequires:	automake >= 1:1.9
 BuildRequires:	gnome-common
 BuildRequires:	gnome-doc-utils
+BuildRequires:	gettext-devel
 BuildRequires:	gtk+2-devel >= 2:2.6.0
 BuildRequires:	hal-devel >= 0.5.10
 BuildRequires:	intltool >= 0.35.0
