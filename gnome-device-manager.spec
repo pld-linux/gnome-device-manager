@@ -9,9 +9,10 @@ Source0:	http://hal.freedesktop.org/releases/%{name}-%{version}.tar.bz2
 # Source0-md5:	b833a90c940dd6cc992c42ad05ca6831
 BuildRequires:	autoconf
 BuildRequires:	automake >= 1:1.9
+BuildRequires:	docbook-dtd412-xml
+BuildRequires:	gettext-devel
 BuildRequires:	gnome-common
 BuildRequires:	gnome-doc-utils
-BuildRequires:	gettext-devel
 BuildRequires:	gtk+2-devel >= 2:2.6.0
 BuildRequires:	hal-devel >= 0.5.10
 BuildRequires:	intltool >= 0.35.0
