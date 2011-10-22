@@ -2,7 +2,7 @@ Summary:	GNOME application to manage devices and device drivers
 Summary(pl.UTF-8):	Aplikacja GNOME do zarządzania urządzeniami i sterownikami urządzeń
 Name:		gnome-device-manager
 Version:	0.2
-Release:	7
+Release:	8
 License:	GPL
 Group:		X11/Applications
 Source0:	http://hal.freedesktop.org/releases/%{name}-%{version}.tar.bz2
