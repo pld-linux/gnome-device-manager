@@ -10,7 +10,7 @@ Source0:	http://hal.freedesktop.org/releases/%{name}-%{version}.tar.bz2
 BuildRequires:	autoconf
 BuildRequires:	automake >= 1:1.9
 BuildRequires:	docbook-dtd412-xml
-BuildRequires:	gettext-devel
+BuildRequires:	gettext-tools
 BuildRequires:	gnome-common
 BuildRequires:	gnome-doc-utils
 BuildRequires:	gtk+2-devel >= 2:2.6.0
